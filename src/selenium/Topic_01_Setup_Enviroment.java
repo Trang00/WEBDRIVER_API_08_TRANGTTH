@@ -1,5 +1,6 @@
 package selenium;
 
+
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -30,10 +31,10 @@ public class Topic_01_Setup_Enviroment {
 	}
 
 	@Test
-	public void TC_02_CheckTitle() {
+	public void TC_02_CheckTitle()  {
 		String homePageTitle = driver.getTitle();
 		Assert.assertEquals(homePageTitle, "Home page");
-		System.out.println(homePageTitle);
+		System.out.println("Tiêu đề trang web: "+homePageTitle);
 	}
 
 	@Test
@@ -41,7 +42,7 @@ public class Topic_01_Setup_Enviroment {
 		WebElement homePageLogo = driver.findElement(By.xpath("//img[contains(@src,'logo.png')]"));
 		Assert.assertTrue(homePageLogo.isDisplayed());
 	}
-
+	
 	@AfterClass
 	public void afterClass() {
 		driver.quit();
