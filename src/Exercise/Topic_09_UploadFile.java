@@ -197,8 +197,7 @@ WebDriver driver;
 		  //  + File name: UploadFile.jpg
 		Assert.assertTrue(driver.findElement(By.xpath("//dd[text()='Email Address: dam@gmail.com']")).isDisplayed());
 		Assert.assertTrue(driver.findElement(By.xpath("//dd[text()='First Name: DAM DAO']")).isDisplayed());
-		
-		
+				
 		//Step 08 - Click 'View Uploaded Files' link
 		driver.findElement(By.xpath("//a[text()='View Uploaded Files']")).click();
 		
@@ -240,15 +239,10 @@ public void beforMethod() {
 	
 	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	driver.manage().window().maximize();
-	
-	
-	
-	
-	
-	
+
 }
 @AfterMethod
 public void afterMethod() {
-	//driver.quit();
+	driver.quit();
 }
 }
