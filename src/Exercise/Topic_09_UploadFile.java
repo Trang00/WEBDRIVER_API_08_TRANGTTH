@@ -182,7 +182,8 @@ WebDriver driver;
 		UploadTo.selectByValue("/");
 		
 		//Step 04 - Input random folder to 'New subfolder? Name:) textbox (Ex: dam1254353)
-		driver.findElement(By.xpath("//input[@id='newsubdir1']")).sendKeys("Trang00");
+		String RandomFolder="dam"+randomNumber();
+		driver.findElement(By.xpath("//input[@id='newsubdir1']")).sendKeys(RandomFolder);
 		
 		//Step 05 - Input email and firstname (dam@gmail.com/ DAM DAO)
 		driver.findElement(By.xpath("//input[@id='formfield-email_address']")).sendKeys("dam@gmail.com");
@@ -202,7 +203,7 @@ WebDriver driver;
 		driver.findElement(By.xpath("//a[text()='View Uploaded Files']")).click();
 		
 		//Step 09 - Click to random folder (Ex: dam1254353)
-		driver.findElement(By.xpath("//a[contains(text(),'Trang00')]")).click();
+		driver.findElement(By.xpath("//a[text()='"+RandomFolder+"']")).click();//------------------------------
 		
 		//Step 09 - Verify file name exist in folder (UploadFile.jpg)
 		Assert.assertTrue(driver.findElement(By.xpath("//a[@href and text()='"+fileName01+"']")).isDisplayed());
@@ -239,7 +240,6 @@ public void beforMethod() {
 	
 	driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 	driver.manage().window().maximize();
-
 }
 @AfterMethod
 public void afterMethod() {
