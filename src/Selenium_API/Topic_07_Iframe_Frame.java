@@ -1,4 +1,4 @@
-package Exercise;
+package Selenium_API;
 
 
 import java.util.List;
@@ -64,7 +64,7 @@ public void TC_01() {//OK
 	List <WebElement> banerImages=driver.findElements(By.xpath("//div[@class='flipBanner']//img[@class='front icon']"));
 	System.out.println("Size Img:"+banerImages.size());
 	Assert.assertEquals(banerImages.size(), 8);
-	// cách 1 dùng for thường
+	// cách 1 dùng for thư�?ng
 	/*
 	for(int i=0; i< banerImages.size();i++) {
 		System.out.println("i:"+i);

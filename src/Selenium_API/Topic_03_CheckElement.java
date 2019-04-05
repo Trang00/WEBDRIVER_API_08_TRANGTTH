@@ -1,4 +1,4 @@
-package Exercise;
+package Selenium_API;
 
 import java.util.concurrent.TimeUnit;
 

@@ -1,4 +1,4 @@
-package Exercise;
+package Selenium_API;
 
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
@@ -96,7 +96,7 @@ public class Topic_02_CreateAndLogin {
 	  
 	  Thread.sleep(6000);
 	  String Title1=driver.getTitle();
-	  System.out.println("Tiêu đề navigate:"+Title1);
+	  System.out.println("Tiêu đ�? navigate:"+Title1);
 	  String Tieude1="Home page";
 	  Assert.assertEquals(Title1, Tieude1);
   }

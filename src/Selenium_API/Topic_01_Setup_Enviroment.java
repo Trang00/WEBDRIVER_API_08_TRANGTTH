@@ -1,4 +1,4 @@
-package Exercise;
+package Selenium_API;
 
 
 import java.util.concurrent.TimeUnit;
@@ -34,7 +34,7 @@ public class Topic_01_Setup_Enviroment {
 	public void TC_02_CheckTitle()  {
 		String homePageTitle = driver.getTitle();
 		Assert.assertEquals(homePageTitle, "Home page");
-		System.out.println("Tiêu đề trang web: "+homePageTitle);
+		System.out.println("Tiêu đ�? trang web: "+homePageTitle);
 	}
 
 	@Test

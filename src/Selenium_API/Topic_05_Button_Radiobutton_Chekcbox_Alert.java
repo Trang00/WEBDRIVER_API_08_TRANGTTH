@@ -1,4 +1,4 @@
-package Exercise;
+package Selenium_API;
 
 import java.util.concurrent.TimeUnit;
 
@@ -79,7 +79,7 @@ public class Topic_05_Button_Radiobutton_Chekcbox_Alert {
 		javascript.executeScript("arguments[0].click();", Petrol2Radio);
 		
 		Assert.assertTrue(Petrol2Radio.isSelected());
-		//Step 03 - Kiểm tra radio button đó đã chọn hay chưa/ nếu chưa chọn lại
+		//Step 03 - Kiểm tra radio button đó đã ch�?n hay chưa/ nếu chưa ch�?n lại
 		if(!Petrol2Radio.isSelected()) {
 			javascript.executeScript("arguments[0].click();", Petrol2Radio);
 		}

@@ -1,4 +1,4 @@
-package Exercise;
+package Selenium_API;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -40,9 +40,9 @@ public class Topic_06_UserInteractions {
 		/*
 		Step 01 - Truy cập vào trang: http://www.myntra.com/
 		Step 02 - Hover chuột vào Menu để login
-		Step 03 - Chọn Login button
+		Step 03 - Ch�?n Login button
 		Step 04 - Verify Login form được hiển thị
-		Lưu ý: khi chạy tc này ko được sd chuột và bàn phím, chuột sẽ bị cướp quyền 
+		Lưu ý: khi chạy tc này ko được sd chuột và bàn phím, chuột sẽ bị cướp quy�?n 
 		*/
 		driver.get("http://www.myntra.com/"); 
 		
@@ -57,7 +57,7 @@ public class Topic_06_UserInteractions {
 	public void TC_02_ClickAndHold() {
 		/*Step 01 - Truy cập vào trang: http://jqueryui.com/resources/demos/selectable/display-grid.html
 			Step 02 - Click and hold từ 1-> 4
-			Step 03 - Sau khi chọn kiểm tra rằng có đúng 4 phần tử đã được chọn thành công với xpath:
+			Step 03 - Sau khi ch�?n kiểm tra rằng có đúng 4 phần tử đã được ch�?n thành công với xpath:
 			//li[@class='ui-state-default ui-selectee ui-selected']
 		 */
 		driver.get("http://jqueryui.com/resources/demos/selectable/display-grid.html");
@@ -70,7 +70,7 @@ public class Topic_06_UserInteractions {
 	}
 	@Test
 	public void TC_02_ClickAndHold02() {
-	// chọn từng phần tử
+	// ch�?n từng phần tử
 		driver.get("http://jqueryui.com/resources/demos/selectable/display-grid.html");
 		List <WebElement> number=driver.findElements(By.xpath("//ol[@id='selectable']/li"));
 			
@@ -106,7 +106,7 @@ public class Topic_06_UserInteractions {
 	Step 02 - Right click vào element: right click me
 	Step 03 - Hover chuột vào element: Quit
 	Step 04 - Verify element Quit (visible + hover) 
-	Step 05 - Click chọn Quit
+	Step 05 - Click ch�?n Quit
 	Step 06 - Accept Javascript alert
 	=> luu y luc chay ko dung chuot va ban phim
 		 */
@@ -129,7 +129,7 @@ public class Topic_06_UserInteractions {
 	@Test
 	public void TC_05_DragAndDrop() {
 		/*Step 01 - Truy cập vào trang: http://demos.telerik.com/kendo-ui/dragdrop/angular
-		Step 02 - Kéo hình tròn nhỏ vào hình tròn lớn
+		Step 02 - Kéo hình tròn nh�? vào hình tròn lớn
 		Step 03 - Verify message đã thay đổi: You did great!
 		Có nguồn và đích đến
 		 * */

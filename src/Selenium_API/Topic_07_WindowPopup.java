@@ -1,4 +1,4 @@
-package Exercise;
+package Selenium_API;
 
 import java.util.Iterator;
 import java.util.List;
@@ -24,8 +24,8 @@ public void TC_01_WindowID() {
 Step 02 - Click "Opening a new window: Click Here" link -> Switch qua tab mới
 Step 03 - Kiểm tra title của window mới = Google
 Step 04 - Close window mới
-Step 05 - Switch về parent window
-Step 06 - Kiểm tra đã quay về parent window thành công (title/ url)
+Step 05 - Switch v�? parent window
+Step 06 - Kiểm tra đã quay v�? parent window thành công (title/ url)
 	 * */
 	driver.get("https://daominhdam.github.io/basic-form/index.html");
 	
@@ -117,7 +117,6 @@ Step 07 - Close tất cả popup khác - chỉ giữ lại parent window (http:/
 	driver.switchTo().frame(driver.findElement(By.xpath("//frame[@name='footer']")));
 	driver.findElement(By.xpath("//a[text()='Privacy Policy']")).click();//
 	
-	
 	switchToWindowByTitle("HDFC Bank - Leading Bank in India, Banking Services, Private Banking, Personal Loan, Car Loan");
 	
 	//Step 06- Click CSR link on Privacy Policy page
@@ -155,7 +154,7 @@ public void TC_05() {
 		//Step 07 - Verify title của cửa sổ bằng:  Products Comparison List - Magento Commerce
 	Assert.assertEquals(driver.getTitle(), "Products Comparison List - Magento Commerce");
 	
-		//Step 08 - Close tab và chuyển về Parent Window
+		//Step 08 - Close tab và chuyển v�? Parent Window
 	driver.close();
 	 
 	
@@ -164,7 +163,6 @@ public void TC_05() {
 public void switchToChildWindowID(String parent) {
 	//get ra tất cả các cửa sổ đang có, 
     Set<String> allWindows = driver.getWindowHandles();
-    
     // Duyệt qua từng ID của tất cả các cửa sổ
     for (String childWindow : allWindows) {
     	System.out.println("ChildWindowID:"+childWindow);// ID định danh cho 1 kiểu dữ liệu duy nhất
@@ -186,7 +184,7 @@ public void switchToWindowByTitle(String titleExpected) {
                 //Get ra title của window/tab hiện tại
                 String currentWinTitle = driver.getTitle();
                 System.out.println("currentWinTitle:"+currentWinTitle);
-                //Kiểm tra nêwu như  currentWinTitle=titleExpected thì dừng lại, thoát khỏi vòng lặp
+                //Kiểm tra nêwu như  currentWinTitle=titleExpected thì dừng lại, thoát kh�?i vòng lặp
                 if (currentWinTitle.equals(titleExpected)) {
                             break;
                 }
@@ -206,7 +204,7 @@ public boolean closeAllWithoutParentWindows(String parentWindow) {
                             driver.close();
                 }
     }
-    driver.switchTo().window(parentWindow);// switch về lại parentWindow
+    driver.switchTo().window(parentWindow);// switch v�? lại parentWindow
     //Kiểm tra chỉ còn duy nhất 1 cửa sổ
     if (driver.getWindowHandles().size() == 1)
                return true;

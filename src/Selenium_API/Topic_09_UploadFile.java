@@ -1,4 +1,4 @@
-package Exercise;
+package Selenium_API;
 
 import java.awt.AWTException;
 import java.awt.Robot;
@@ -31,7 +31,7 @@ WebDriver driver;
 	String fileName02="02.jpg";
 	String fileName03="03.jpg";
 
-	String filePath01=rootFoder+"\\uploadFile\\"+fileName01;	//đường dẫn file cần upload
+	String filePath01=rootFoder+"\\uploadFile\\"+fileName01;	//đư�?ng dẫn file cần upload
 	String filePath02=rootFoder+"\\uploadFile\\"+fileName02;
 	String filePath03=rootFoder+"\\uploadFile\\"+fileName03;
 	
@@ -51,14 +51,14 @@ WebDriver driver;
 		driver.get("http://blueimp.github.com/jQuery-File-Upload/");
 		Thread.sleep(5000);
 		
-		//Step 02 - Sử dụng phương thức sendKeys để upload file nhiều file cùng lúc chạy cho 3 trình duyệt (IE/ Firefox/ Chrome). Upload 3 file
+		//Step 02 - Sử dụng phương thức sendKeys để upload file nhi�?u file cùng lúc chạy cho 3 trình duyệt (IE/ Firefox/ Chrome). Upload 3 file
 		//IE => Chưa OK
 		//Firefox => fiên bản mới nhất, cùng với driver tương ứng, slelenium 3.xx
 		//Chrome=> OK
 		WebElement addFileButton=driver.findElement(By.xpath("//input[@type='file']"));
 		addFileButton.sendKeys(filePath01+"\n"+filePath02+"\n"+filePath03);
 			
-		//Step 03 - Kiểm tra file đã được chọn thành công
+		//Step 03 - Kiểm tra file đã được ch�?n thành công
 		Thread.sleep(4000);
 		Assert.assertTrue(driver.findElement(By.xpath("//p[@class='name' and text()='"+fileName01+"']")).isDisplayed());
 		Assert.assertTrue(driver.findElement(By.xpath("//p[@class='name' and text()='"+fileName02+"']")).isDisplayed());

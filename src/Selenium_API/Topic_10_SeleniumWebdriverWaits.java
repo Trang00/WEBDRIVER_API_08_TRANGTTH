@@ -1,4 +1,4 @@
-package Exercise;
+package Selenium_API;
 
 import java.util.Date;
 import java.util.concurrent.TimeUnit;
@@ -46,14 +46,14 @@ public class Topic_10_SeleniumWebdriverWaits {
 		driver.get("http://the-internet.herokuapp.com/dynamic_loading/2");
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		
-		//Check visiable. Trước khi thao tác với element thì nên sử dụng wait explicit như 1 cái điều kiện tiên quyết
+		//Check visiable. Trước khi thao tác với element thì nên sử dụng wait explicit như 1 cái đi�?u kiện tiên quyết
 		waitExplicit.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//button[text()='Start']")));
 		driver.findElement(By.xpath("//button[text()='Start']")).click();
 		
 		//Check presence ( có trong DOM - Pass)
 		waitExplicit.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@id='loading']")));
 		
-		//Check invisble(Check cho nó biến mất đi: 5s nó biến mất rồi -> Đang wait cho nó biến mất tận 30s.)
+		//Check invisble(Check cho nó biến mất đi: 5s nó biến mất rồi -> �?ang wait cho nó biến mất tận 30s.)
 		waitExplicit.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@id='loading']")));
 		Assert.assertTrue(driver.findElement(By.xpath("//div[@id='finish']/h4[text()='Hello World!']")).isDisplayed());
 	}
@@ -62,7 +62,7 @@ public class Topic_10_SeleniumWebdriverWaits {
 		driver.get("http://the-internet.herokuapp.com/dynamic_loading/2");
 		driver.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
 		
-		//Check visiable. Trước khi thao tác với element thì nên sử dụng wait explicit như 1 cái điều kiện tiên quyết
+		//Check visiable. Trước khi thao tác với element thì nên sử dụng wait explicit như 1 cái đi�?u kiện tiên quyết
 		waitExplicit.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//button[text()='Start']")));
 		driver.findElement(By.xpath("//button[text()='Start']")).click();
 		
@@ -98,7 +98,7 @@ public class Topic_10_SeleniumWebdriverWaits {
 		waitExplicit=new WebDriverWait(driver, 10);
 		
 		//===========CHECK ELEMENT INVISIBLE- KO COS TRONG DOM============
-		//Check invisible (hello word) => ko có trong DOM=> pass -> Chờ hết timeout 10s
+		//Check invisible (hello word) => ko có trong DOM=> pass -> Ch�? hết timeout 10s
 		System.out.println("------------Start time check hello word invisible (NOT IN DOM)---------");
 		System.out.println(date=new Date());
 		waitExplicit.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@id='finish']/h4[text()='Hello World!']")));
@@ -120,7 +120,7 @@ public class Topic_10_SeleniumWebdriverWaits {
 		
 		//===============CHECK ELEMENT INVISIBLE- CO TRONG DOM========================
 		
-		//Check invisible (loading) => có trong DOM=> pass -> ko chờ hết timeout -> giây đầu tiên nó đã ko thấy hiển thi trên UI
+		//Check invisible (loading) => có trong DOM=> pass -> ko ch�? hết timeout -> giây đầu tiên nó đã ko thấy hiển thi trên UI
 		System.out.println("------------Start time loading invisible (IN DOM)---------");
 		System.out.println(date=new Date());
 		waitExplicit.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath("//div[@id='loading']")));
@@ -220,11 +220,11 @@ public class Topic_10_SeleniumWebdriverWaits {
 		waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='demo-container size-narrow']")));
 		waitExplicit.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//div[@class='demo-container size-narrow']")));
 		
-//			Step 03 - In ra ngày đã chọn (Before AJAX call) -> hiện tại chưa chọn nên in ra = "No Selected Dates to display."
+//			Step 03 - In ra ngày đã ch�?n (Before AJAX call) -> hiện tại chưa ch�?n nên in ra = "No Selected Dates to display."
 		WebElement SelectedDateBefor=driver.findElement(By.xpath("//span[@class='label']"));
 		Assert.assertEquals(SelectedDateBefor.getText(), "No Selected Dates to display.");
 		
-//			Step 04 - Chọn ngày hiện tại (VD: 23/09/2017) (hoặc 1 ngày bất kì tương ứng trong tháng/ năm hiện tại)
+//			Step 04 - Ch�?n ngày hiện tại (VD: 23/09/2017) (hoặc 1 ngày bất kì tương ứng trong tháng/ năm hiện tại)
 		driver.findElement(By.xpath("//a[text()='1']")).click();
 		
 //			Step 05 - Wait cho đến khi "loader ajax" không còn visible (sử dụng: invisibility ) Xpath: //div[@class='raDiv']
@@ -234,7 +234,7 @@ public class Topic_10_SeleniumWebdriverWaits {
 		waitExplicit.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[contains(@class,'rcSelected')]//a[text()='1']")));
 		Assert.assertTrue(driver.findElement(By.xpath("//*[contains(@class,'rcSelected')]//a[text()='1']")).isDisplayed());
 		
-//			Step 07 - Verify ngày đã chọn bằng = Saturday, September 23, 2017
+//			Step 07 - Verify ngày đã ch�?n bằng = Saturday, September 23, 2017
 		WebElement SelectedDateAfter=driver.findElement(By.xpath("//span[@class='label']"));
 		Assert.assertEquals(SelectedDateAfter.getText(), "Monday, April 01, 2019");
 	}
@@ -269,8 +269,8 @@ public class Topic_10_SeleniumWebdriverWaits {
 		
 //			Step 02 - Wait cho đến khi countdown time được visible (visibility)
 //			Step 03 - Sử dụng Fluent wait để:
-//			Mỗi 1s kiểm tra countdount= 00 được xuất hiện trên page hay chưa (giây đếm ngược về 00)
-//			Tức là trong vòng 15s (tổng thời gian), cứ mỗi 1 giây verify xem nó đã đếm ngược về giây 00 hay chưa
+//			Mỗi 1s kiểm tra countdount= 00 được xuất hiện trên page hay chưa (giây đếm ngược v�? 00)
+//			Tức là trong vòng 15s (tổng th�?i gian), cứ mỗi 1 giây verify xem nó đã đếm ngược v�? giây 00 hay chưa
 		
 		driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 		
@@ -285,12 +285,12 @@ public class Topic_10_SeleniumWebdriverWaits {
 		           .withTimeout(15, TimeUnit.SECONDS)
 		            // Tần số mỗi 1s check 1 lần
 		            .pollingEvery(1, TimeUnit.SECONDS)
-		           // Nếu gặp exception là find ko thấy element sẽ bỏ  qua
+		           // Nếu gặp exception là find ko thấy element sẽ b�?  qua
 		            .ignoring(NoSuchElementException.class)
-		            // Kiểm tra điều kiện
+		            // Kiểm tra đi�?u kiện
 		            .until(new Function<WebElement, Boolean>() {
 		                public Boolean apply(WebElement element) {
-		                           // Kiểm tra điều kiện countdount = 00
+		                           // Kiểm tra đi�?u kiện countdount = 00
 		                           boolean flag =  element.getText().endsWith("00");
 		                           System.out.println("Time = " +  element.getText());
 		                           // return giá trị cho function apply

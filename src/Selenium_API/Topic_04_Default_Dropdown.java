@@ -1,4 +1,4 @@
-package Exercise;
+package Selenium_API;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -28,22 +28,22 @@ public class Topic_04_Default_Dropdown {
 		Select Job1Select=new Select(driver.findElement(Job1));
 		Assert.assertFalse(Job1Select.isMultiple());
 		
-	//Step 03 - Chọn giá trị Automation Tester trong dropdown bằng phương thức selectVisible
+	//Step 03 - Ch�?n giá trị Automation Tester trong dropdown bằng phương thức selectVisible
 		Job1Select.selectByVisibleText("Automation Tester");
 		
-	//Step 04 - Kiểm tra giá trị đã được chọn thành công
+	//Step 04 - Kiểm tra giá trị đã được ch�?n thành công
 		String actualJob1SelectText=Job1Select.getFirstSelectedOption().getText();
 		Assert.assertEquals("Automation Tester", actualJob1SelectText);
 		
-//		Step 05 - Chọn giá trị Manual Tester trong dropdown bằng phương thức selectValue
+//		Step 05 - Ch�?n giá trị Manual Tester trong dropdown bằng phương thức selectValue
 		Job1Select.selectByValue("manual");
 		
-//		Step 06 - Kiểm tra giá trị đã được chọn thành công
+//		Step 06 - Kiểm tra giá trị đã được ch�?n thành công
 		String actualJob1SelectValue=Job1Select.getFirstSelectedOption().getText();
 		Assert.assertEquals("Manual Tester", actualJob1SelectValue);
 		
-//		Step 07 - Chọn giá trị Mobile Tester trong dropdown bằng phương thức selectIndex
-//		Step 08 - Kiểm tra giá trị đã được chọn thành công
+//		Step 07 - Ch�?n giá trị Mobile Tester trong dropdown bằng phương thức selectIndex
+//		Step 08 - Kiểm tra giá trị đã được ch�?n thành công
 		Job1Select.selectByIndex(3);
 		String actualJob1SelectIndex=Job1Select.getFirstSelectedOption().getText();
 		Assert.assertEquals("Mobile Tester", actualJob1SelectIndex);

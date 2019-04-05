@@ -1,4 +1,4 @@
-package Exercise;
+package Selenium_API;
 
 import java.util.List;
 import java.util.concurrent.TimeUnit;
@@ -24,8 +24,8 @@ public class Topic_04_Custom_Dropdown {
 	@Test
 	public void TC_01_Custom_DropDown_Jquery() throws Exception {//ok
 		
-	//	Step 02 - Chọn item cuối cùng: số 19
-	//	Step 03 - Kiểm tra item đã được chọn thành công
+	//	Step 02 - Ch�?n item cuối cùng: số 19
+	//	Step 03 - Kiểm tra item đã được ch�?n thành công
 		driver.get("http://jqueryui.com/resources/demos/selectmenu/default.html");
 		
 		selectCustomDropdownList("//span[@id='number-button']", "//ul[@id='number-menu']//li[@class='ui-menu-item']/div", "19");
@@ -46,7 +46,7 @@ public class Topic_04_Custom_Dropdown {
 		}
 	@Test
 	public void TC_03_Custom_DropDown_KendoUI() throws Exception {//OK
-		driver.get("https://demos.telerik.com/kendo-ui/dropdownlist/index");// chọn mũ màu vàng
+		driver.get("https://demos.telerik.com/kendo-ui/dropdownlist/index");// ch�?n mũ màu vàng
 		selectCustomDropdownList("//div[@id='cap-view']/span[1]/span", "//ul[@id='color_listbox']/li", "Orange");// 
 		Thread.sleep(20000);
 		Assert.assertTrue(driver.findElement(By.xpath("//div[@id='cap-view']//span[text()='Orange']")).isDisplayed());
@@ -68,12 +68,12 @@ public class Topic_04_Custom_Dropdown {
 		String actualJob1SelectText=Select1.getFirstSelectedOption().getText();
 		Assert.assertEquals("Audi", actualJob1SelectText);
 		
-		//Effects: Có thể tìm kiếm hoặc chọn
+		//Effects: Có thể tìm kiếm hoặc ch�?n
 		driver.findElement(By.xpath("//div[@id='default-place']/input[@class='form-control es-input']")).sendKeys("A", Keys.RETURN);
 		driver.findElement(By.xpath("//div[@id='default-place']/ul/li[text()='Audi']")).click();
 		Assert.assertTrue(driver.findElement(By.xpath("//div[@id='default-place']//li[@class='es-visible' and text()='Audi']")).isDisplayed());
 		
-		//Dialog- Mở ra hôp thoại, tìm kiếm/ chọn dl
+		//Dialog- Mở ra hôp thoại, tìm kiếm/ ch�?n dl
 		driver.findElement(By.xpath("//a[@class='btn btn-default']")).click();
 		driver.findElement(By.xpath("//div[@id='appendTo-place']/input[@class='form-control es-input']")).sendKeys("A", Keys.RETURN);
 		
@@ -92,16 +92,16 @@ public class Topic_04_Custom_Dropdown {
 		javascript.executeScript("arguments[0].click();", parent);
 		
 		Thread.sleep(1000);
-		//WebElement cl1=driver.findElement(By.xpath("//li[@class='multiple']/label/input[@value='1']"));// click vào giá trị cần chọn
+		//WebElement cl1=driver.findElement(By.xpath("//li[@class='multiple']/label/input[@value='1']"));// click vào giá trị cần ch�?n
 		//javascript.executeScript("arguments[0].click();", cl1);
-		driver.findElement(By.xpath("//li[@class='multiple']/label/input[@value='1']")).click();// click vào giá trị cần chọn
-		WebElement cl2=driver.findElement(By.xpath("//li[@class='multiple']/label/input[@value='2']"));// click vào giá trị cần chọn
+		driver.findElement(By.xpath("//li[@class='multiple']/label/input[@value='1']")).click();// click vào giá trị cần ch�?n
+		WebElement cl2=driver.findElement(By.xpath("//li[@class='multiple']/label/input[@value='2']"));// click vào giá trị cần ch�?n
 		javascript.executeScript("arguments[0].click();", cl2);
 		WebElement cl3=driver.findElement(By.xpath("//li[@class='multiple']/label/input[@value='3']"));
 		javascript.executeScript("arguments[0].click();", cl3);
 		WebElement cl4=driver.findElement(By.xpath("//li[@class='multiple']/label/input[@value='4']"));
 		javascript.executeScript("arguments[0].click();", cl4);
-		//driver.findElement(By.xpath("//li[@class='multiple']/label/input[@value='2']")).click();// click vào giá trị cần chọn
+		//driver.findElement(By.xpath("//li[@class='multiple']/label/input[@value='2']")).click();// click vào giá trị cần ch�?n
 	
 		Assert.assertTrue(driver.findElement(By.xpath("//div[@id='example']/div/button/span[text()='4 of 30 selected']")).isDisplayed());
 	}
@@ -112,13 +112,13 @@ public class Topic_04_Custom_Dropdown {
 		driver.findElement(By.xpath("//div[@class='ui fluid dropdown selection multiple']//i[@class='dropdown icon']")).click();// click vào dropdow
 
 		Thread.sleep(1000);
-		driver.findElement(By.xpath("//div[text()='Python']")).click();// click vào giá trị cần chọn
+		driver.findElement(By.xpath("//div[text()='Python']")).click();// click vào giá trị cần ch�?n
 		driver.findElement(By.xpath("//div[text()='Javascript']")).click();
 		driver.findElement(By.xpath("//div[text()='HTML']")).click();
 		
 		Thread.sleep(3000);
 		
-		List<WebElement> numberSelected=driver.findElements(By.xpath("//a[@class='ui label transition visible']"));//xác nhận giá trị chọn
+		List<WebElement> numberSelected=driver.findElements(By.xpath("//a[@class='ui label transition visible']"));//xác nhận giá trị ch�?n
 		System.out.println("Phan tu duoc chon:"+numberSelected.size());
 		Assert.assertEquals(3, numberSelected.size());
 	}
@@ -138,7 +138,7 @@ public class Topic_04_Custom_Dropdown {
 			
 			for(WebElement childItem: child) {
 				if(childItem.getText().equals(valueExpected)) {
-					//Scrool đến item cần chọn xong click
+					//Scrool đến item cần ch�?n xong click
 
 					javascript.executeScript("arguments[0].scrollIntoView(true);", childItem);
 					Thread.sleep(3000);

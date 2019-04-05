@@ -1,4 +1,4 @@
-package Exercise;
+package Selenium_API;
 
 import java.util.Random;
 import java.util.concurrent.TimeUnit;
@@ -120,11 +120,11 @@ public class Topic_08_JAVASCRIPT_EXECUTOR {
 		String myDashboardInnerText= (String) executeForBrowser("return document.documentElement.innerText");
 		Assert.assertTrue(myDashboardInnerText.contains("Thank you for registering with Main Website Store."));
 		
-		//Step 06 - Logout khỏi hệ thống
+		//Step 06 - Logout kh�?i hệ thống
 		clickToElementByJS("//header[@id='header']//span[text()='Account']");
 		clickToElementByJS("//a[text()='Log Out']");
 		
-				//Step 07 - Kiểm tra hệ thống navigate về Home page sau khi logout thành công 
+				//Step 07 - Kiểm tra hệ thống navigate v�? Home page sau khi logout thành công 
 		Assert.assertTrue(driver.findElement(By.xpath("//img[contains(@src,'logo.png')]")).isDisplayed());
 	}
 	@Test
