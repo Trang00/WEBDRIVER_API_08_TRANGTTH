@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Selenium Advanced Online 08" parallel="tests" thread-cout="3">
+
+
+  
+  <parameter name="email" value="tranghc0938@gmail.com"/>
+  <parameter name="pass" value="123456"/>
+  
+  <test name="Run on CHROME">
+  <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="Test_NG.TestNG_06_Dependencies"/>
+    </classes>
+  </test> 
+    
+  
+  
+  
+  
+</suite> <!-- Suite -->

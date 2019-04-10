@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="RUN SUMMARY">
+
+    <suite-files>
+        <suite-file path="RunTestcase_multiBrowser.xml" />
+        <suite-file path="RunTestcase_Loop.xml" />
+    </suite-files>
+    
+</suite>
+  
+

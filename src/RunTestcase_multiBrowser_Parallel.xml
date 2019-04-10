@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="Selenium Advanced Online 08" parallel="tests" thread-cout="3">
+
+<!-- Test Chạy nhiều trình duyệt-parallel="tests" khởi chạy tất cả trình duyệt cùng 1 lúc- TestNG_04-->
+
+  <parameter name="email" value="tranghc0938@gmail.com"/>
+  <parameter name="pass" value="123456"/>
+  
+  <test name="Run on CHROME">
+  <parameter name="browser" value="chrome"/>
+    <classes>
+      <class name="Test_NG.TestNG_04_MultiBrowser"/>
+    </classes>
+  </test> 
+  
+   <test name="Run on FIREFOX">
+   <parameter name="browser" value="firefox"/>
+    <classes>
+      <class name="Test_NG.TestNG_04_MultiBrowser"/>
+    </classes>
+  </test>
+  
+   <test name="Run on INTERNET EXPLOER">
+   <parameter name="browser" value="ie"/>
+    <classes>
+      <class name="Test_NG.TestNG_04_MultiBrowser"/>
+    </classes>
+  </test> 
+  
+     <test name="Run on HEADLESS">
+   <parameter name="browser" value="headless"/>
+    <classes>
+      <class name="Test_NG.TestNG_04_MultiBrowser"/>
+    </classes>
+  </test> 
+
+    <!-- Hết Chạy nhiều trình duyệt
+   -->
+ 
+  
+  
+  
+  
+  
+  
+</suite> <!-- Suite -->

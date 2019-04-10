@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<suite name="RUN PACKAGES">
+
+
+  
+  <test name="Run on CHROME">
+    <parameter name="email" value="tranghc0938@gmail.com"/>
+  <parameter name="pass" value="123456"/>
+  
+  <parameter name="browser" value="chrome"/>
+    <packages>
+    	<package name ="Test_NG"/>
+     </packages>
+  </test> 
+  
+  
+  
+  
+  
+</suite> <!-- Suite -->
